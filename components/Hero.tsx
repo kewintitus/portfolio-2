@@ -17,12 +17,13 @@ function Hero({}: Props) {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircle />
-      <div className="bg-white rounded-full overflow-hidden relative self-center float content-center justify-center  ">
+      <div className="bg-white rounded-full w-14 h-14 overflow-hidden relative self-center float content-center justify-center  ">
         <Image
           src="/../public/res/KewinC1.jpg"
-          width="80%"
-          height="80%"
+          // width="80%"
+          // height="80%"
           quality="100"
+          layout="fill"
           objectFit="cover"
           blurDataURL="data:..."
           placeholder="blur"
@@ -31,7 +32,7 @@ function Hero({}: Props) {
       </div>
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-400 tracking-widest ">
-          Frontend Developer
+          React Developer
         </h2>
         <h1 className="text-3xl font-semibold py-0 my-0">
           <span className="">{text}</span>
