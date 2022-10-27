@@ -17,8 +17,8 @@ function WorkExperience({}: Props) {
       </h3>
       <div>
         <ExperienceCard />
-        <ExperienceCard />
-        <ExperienceCard />
+        {/* <ExperienceCard />
+        <ExperienceCard /> */}
       </div>
     </motion.div>
   );
