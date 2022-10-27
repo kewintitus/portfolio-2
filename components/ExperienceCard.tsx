@@ -7,7 +7,13 @@ type Props = {};
 
 function ExperienceCard({}: Props) {
   return (
-    <article className="flex flex-col items-center rounded-lg">
+    <article
+      className="flex flex-col items-center
+     bg-[#292929]  rounded-lg space-y-7 
+     flex-shrink-0 w-[300px] md:w-[400px]
+      xl:w-[400px] xl:mx-auto p-5 snap-center md:opacity-40 cursor-pointer 
+      md:hover:opacity-100 md:transition-opacity md:duration-500"
+    >
       <motion.div
         initial={{
           y: -100,
@@ -79,7 +85,7 @@ function ExperienceCard({}: Props) {
           </svg>
         </div>
         <p className="uppercase text-gray-300">Apr-2021 to Aug-2022</p>
-        <ul>
+        <ul className="list-disc space-y-2">
           <li>Summary</li>
           <li>Summary</li>
           <li>Summary</li>
