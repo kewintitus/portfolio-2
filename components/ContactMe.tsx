@@ -29,14 +29,29 @@ function ContactMe({}: Props) {
             <p>Chennai, Tamil Nadu</p>
           </div>
         </div>
-        <form className="flex flex-col gap-2 w-fit mx-auto text-black">
+        <form className="flex flex-col gap-2 w-80 md:w-fit mx-auto text-black mt-6">
           <div className="flex gap-2">
-            <input className="contact-input" type="text"></input>
-            <input className="contact-input" type="text"></input>
+            <input
+              placeholder="Name"
+              className="contact-input w-[50%]"
+              type="text"
+            ></input>
+            <input
+              placeholder="Email"
+              className="contact-input w-[50%]"
+              type="email"
+            ></input>
           </div>
-          <input className="contact-input " type="text"></input>
-          <textarea className="contact-input" />
-          <button className="bg-red-400 text-gray-100 py-5 px-10 rounded-md">
+          <input
+            placeholder="Subject"
+            className="contact-input "
+            type="text"
+          ></input>
+          <textarea placeholder="Message" className="contact-input" />
+          <button
+            type="submit"
+            className="bg-red-400 text-gray-100 py-5 px-10 rounded-md"
+          >
             Submit
           </button>
         </form>
