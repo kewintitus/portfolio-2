@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 type Props = {};
 
 function Projects({}: Props) {
   const projects = [1, 2, 3];
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2 }}
       className="h-screen relative flex 
     overflow-hidden 
     flex-col items-center justify-evenly mx-auto z-0"
@@ -21,13 +26,22 @@ function Projects({}: Props) {
       </h3>
 
       <div
-        className="relative w-full 
+        className="relative w-full cursor-grab 
         flex overflow-x-scroll gap-10
       overflow-y-hidden snap-x snap-mandatory z-20 px-7"
       >
         {projects.map((project) => (
           <div className="flex flex-col w-screen relative items-center justify-center p-32 md:p-44">
-            <div className="md:w-[700px] md:h-[384px] w-[280px] h-auto snap-center flex items-center justify-center">
+            <motion.div
+              initial={{
+                y: -300,
+                opacity: 0,
+              }}
+              transition={{ duration: 1.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="md:w-[700px] md:h-[384px] w-[280px] h-auto snap-center flex items-center justify-center"
+            >
               <Image
                 src="/../public/res/Project-imgs/Gmail-clone.png"
                 width="480px"
@@ -39,16 +53,22 @@ function Projects({}: Props) {
                 // placeholder="blur"
                 className="inline-block"
               />
-            </div>
-            <div className="text-xl font-semibold text-center">
+            </motion.div>
+            <div className="text-xl font-semibold text-center px-8 space-y-3 w-[400px] md:w-[600px] xl:w-[800px] ">
               <h4 className="underline decoration-red-600">Gmail Clone</h4>
+              <p className="text-lg font-normal">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Blanditiis necessitatibus eos id deleniti fugit dolorem quo
+                animi in adipisci! Aut quos esse atque impedit nostrum autem
+                suscipit culpa tenetur officiis?
+              </p>
             </div>
           </div>
         ))}
       </div>
 
       <div className="w-full absolute top-[30%] h-[40%] bg-red-800 opacity-20 -skew-y-6 z-10"></div>
-    </div>
+    </motion.div>
   );
 }
 
