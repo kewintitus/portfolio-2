@@ -21,8 +21,9 @@ function ContactMe({}: Props) {
     formState: { errors },
   } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (formData) =>
-    console.log(formData);
+  const onSubmit: SubmitHandler<FormValues> = (formData) => {
+    window.location.href = `mailto:kewintitus@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
+  };
 
   return (
     <div className="h-screen relative flex flex-col items-center justify-center">

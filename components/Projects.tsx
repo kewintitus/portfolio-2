@@ -26,9 +26,9 @@ function Projects({}: Props) {
       </h3>
 
       <div
-        className="relative w-full cursor-grab 
+        className="relative w-full 
         flex overflow-x-scroll gap-10
-      overflow-y-hidden snap-x snap-mandatory z-20 px-7"
+      overflow-y-hidden snap-x snap-mandatory z-20 px-7 scrollbar-thin scrollbar-track-gray-700/20 scrollbar-thumb-red-700"
       >
         {projects.map((project) => (
           <div className="flex flex-col w-screen relative items-center justify-center p-32 md:p-44">
