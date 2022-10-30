@@ -3,10 +3,13 @@ import React from 'react';
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Social } from '../typings';
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-function Header({}: Props) {
+function Header({ socials }: Props) {
   return (
     <header className=" flex justify-between sticky top-0 p-5 max-w-7xl mx-auto xl:items-center z-40">
       <motion.div
@@ -19,7 +22,16 @@ function Header({}: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-row items-center justify-left z-20"
       >
-        <SocialIcon
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+            className=" cursor-pointer "
+          />
+        ))}
+        {/* <SocialIcon
           url="https://twitter.com/"
           fgColor="gray"
           bgColor="transparent"
@@ -30,7 +42,7 @@ function Header({}: Props) {
           fgColor="gray"
           bgColor="transparent"
           className=" cursor-pointer "
-        />
+        /> */}
       </motion.div>
       <motion.div
         initial={{ x: 500, opacity: 0, scale: 0.5 }}
