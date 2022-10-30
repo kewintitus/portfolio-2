@@ -4,12 +4,19 @@ import Image from 'next/image';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import BackgroundCircle from './ui/BackgroundCircle';
 import Link from 'next/link';
+import { PageInfo } from '../typings';
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function Hero({}: Props) {
+function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
-    words: ["Hi I'm Kewin", 'Self-taught developer', 'Loves to <Code/>'],
+    words: [
+      `Hi I'm ${pageInfo?.name}`,
+      'Self-taught developer',
+      'Loves to <Code/>',
+    ],
     loop: true,
     delaySpeed: 2000,
   });
@@ -32,7 +39,7 @@ function Hero({}: Props) {
       </div>
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-400 tracking-widest ">
-          React Developer
+          {pageInfo?.role}
         </h2>
         <h1 className="text-3xl font-semibold py-0 my-0">
           <span className="">{text}</span>

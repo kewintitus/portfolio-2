@@ -1,10 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { PageInfo } from '../typings';
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -51,12 +54,7 @@ function About({}: Props) {
           Here is a <span className="underline decoration-red-500">little</span>{' '}
           background
         </h4>
-        <p className="text-sm mt-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta natus
-          commodi quam, maxime esse officiis laudantium provident a consequatur
-          quia unde alias ratione veritatis dolores hic eaque facere blanditiis
-          voluptas?
-        </p>
+        <p className="text-sm mt-5">{pageInfo?.backgroundInformation}</p>
       </motion.div>
     </motion.div>
   );

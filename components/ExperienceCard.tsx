@@ -2,10 +2,13 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { SocialIcon } from 'react-social-icons';
+import { Experience } from '../typings';
 
-type Props = {};
+type Props = {
+  experience: Experience;
+};
 
-function ExperienceCard({}: Props) {
+function ExperienceCard({ experience }: Props) {
   return (
     <article
       className="flex flex-col items-center
@@ -32,9 +35,9 @@ function ExperienceCard({}: Props) {
           className="object-cover mt-1 align-bottom"
         />
       </motion.div>
-      <div>
+      <div className="px-6">
         <h4 className=" text-3xl "> Engineer-I</h4>
-        <p className="text-xl font-bold mt-2">Illumine-i</p>
+        <p className="text-xl font-bold mt-2">{experience?.company}</p>
         <div className="flex space-x-2 my-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,12 +87,28 @@ function ExperienceCard({}: Props) {
             </g>
           </svg>
         </div>
-        <p className="uppercase text-gray-300">Apr-2021 to Aug-2022</p>
+        <p className="uppercase text-gray-300">
+          {new Date(experience?.dateStarted).toLocaleDateString('en-US', {
+            month: 'long',
+            year: 'numeric',
+          })}
+          -
+          {experience?.isCurrentlyWorkingHere
+            ? 'Present'
+            : new Date(experience?.dateEnded).toLocaleDateString('en-US', {
+                month: 'long',
+                year: 'numeric',
+              })}
+        </p>
         <ul className="list-disc space-y-2">
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary </li>
+          <li> Worked on developing add-ins for CAD automation using C# </li>
+          <li>
+            Responsible for developing model quality dashboards using C# and WPF
+          </li>
+          <li>
+            Collaborated with cross-functional teams for timely project
+            deliveries.
+          </li>
         </ul>
       </div>
     </article>

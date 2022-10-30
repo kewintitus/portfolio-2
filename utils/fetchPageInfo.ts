@@ -6,7 +6,7 @@ export const fetchPageInfo = async () => {
   );
 
   const data = await res.json();
-  const pageInfo: PageInfo[] = data.page;
+  const pageInfo: PageInfo = data.page;
 
   return pageInfo;
 };

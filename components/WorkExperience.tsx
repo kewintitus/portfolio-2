@@ -1,10 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ExperienceCard from './ExperienceCard';
+import { Experience } from '../typings';
 
-type Props = {};
+type Props = {
+  experiences: Experience[];
+};
 
-function WorkExperience({}: Props) {
+function WorkExperience({ experiences }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -20,7 +23,10 @@ function WorkExperience({}: Props) {
     
        snap-x snap-mandatory "
       >
-        <ExperienceCard />
+        {experiences?.map((experience) => (
+          <ExperienceCard key={experience._id} experience={experience} />
+        ))}
+        {/* <ExperienceCard /> */}
         {/* <ExperienceCard /> */}
         {/* <ExperienceCard /> */}
       </div>
