@@ -1,6 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import About from '../components/About';
 import ContactMe from '../components/ContactMe';
 import Header from '../components/Header';
@@ -28,7 +27,7 @@ const Home = ({ pageInfo, experiences, socials, projects }: Props) => {
     overflow-x-hidden z-0  scrollbar-track-gray-700/20 scrollbar-thumb-red-700 scrollbar-thin"
     >
       <Head>
-        <title>Kewin's Portfolio</title>
+        <title>{pageInfo?.name} Portfolio</title>
         <meta name="description" content="Portfolio website of kewin" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

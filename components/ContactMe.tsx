@@ -80,7 +80,7 @@ function ContactMe({}: Props) {
           />
           <button
             type="submit"
-            className="bg-red-400 text-gray-100 py-5 px-10 rounded-md"
+            className="bg-red-400 text-gray-100 py-2 px-10 rounded-md"
           >
             Submit
           </button>

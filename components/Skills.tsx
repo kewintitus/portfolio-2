@@ -220,9 +220,9 @@ function Skills({}: Props) {
         <Skill svg={tailwind} />
         <Skill svg={jsIcon} />
         <Skill svg={reactIcon} />
-        <Skill svg={ts} directionLeft={true} />
+        {/* <Skill svg={ts} directionLeft={true} /> */}
         <Skill svg={csharp} directionLeft={true} />
-        <Skill svg={nextjs} directionLeft={true} />
+        {/* <Skill svg={nextjs} directionLeft={true} /> */}
         <Skill svg={firebase} />
       </div>
     </motion.div>

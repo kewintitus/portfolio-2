@@ -35,6 +35,7 @@ function Hero({ pageInfo }: Props) {
           blurDataURL="data:..."
           placeholder="blur"
           className="object-cover mt-1 align-bottom"
+          alt="profile pic"
         />
       </div>
       <div className="z-20">

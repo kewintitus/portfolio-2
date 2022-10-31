@@ -33,6 +33,7 @@ function ExperienceCard({ experience }: Props) {
           blurDataURL="data:..."
           placeholder="blur"
           className="object-cover mt-1 align-bottom"
+          alt="illuminei logo"
         />
       </motion.div>
       <div className="px-6">
@@ -100,7 +101,7 @@ function ExperienceCard({ experience }: Props) {
                 year: 'numeric',
               })}
         </p>
-        <ul className="list-disc space-y-2">
+        <ul className="list-disc space-y-2 text-sm text-gray-400 mt-4 overflow-scroll scrollbar-thin">
           <li> Worked on developing add-ins for CAD automation using C# </li>
           <li>
             Responsible for developing model quality dashboards using C# and WPF

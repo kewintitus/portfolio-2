@@ -32,7 +32,7 @@ function Projects({ projects }: Props) {
       <div
         className="relative w-full 
         flex overflow-x-scroll gap-10
-      overflow-y-hidden snap-x snap-mandatory z-20 px-7 scrollbar scrollbar-track-gray-700/20 scrollbar-thumb-red-700"
+      overflow-y-hidden snap-x snap-mandatory z-20 px-7 md:scrollbar sm:scrollbar-thin scrollbar-track-gray-700/20 scrollbar-thumb-red-700"
       >
         {projects.map((project) => (
           <div
@@ -51,6 +51,7 @@ function Projects({ projects }: Props) {
                 viewport={{ once: true }}
                 src={urlFor(project?.image).url()}
                 className=" object-contain w-[400px] h-auto"
+                alt="project image"
               ></motion.img>
             </div>
             <div className="text-xl font-semibold text-center px-8 space-y-3 w-[400px] md:w-[600px] xl:w-[800px] ">
