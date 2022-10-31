@@ -25,26 +25,12 @@ export default {
     {
       name: 'gitHubLink',
       title: 'GitHubLink',
-      type: 'url',
+      type: 'string',
     },
     {
       name: 'siteLink',
       title: 'SiteLink',
-      type: 'url',
+      type: 'string',
     },
   ],
-
-  // preview: {
-  //   select: {
-  //     title: 'title',
-  //     author: 'author.name',
-  //     media: 'mainImage',
-  //   },
-  //   prepare(selection) {
-  //     const { author } = selection;
-  //     return Object.assign({}, selection, {
-  //       subtitle: author && `by ${author}`,
-  //     });
-  //   },
-  // },
 };

@@ -35,7 +35,7 @@ export interface Project extends SanityBody {
   _type: 'project';
   image: Image;
   summary: string;
-  githubLink: string;
+  gitHubLink: string;
   siteLink: string;
 }
 
