@@ -10,13 +10,9 @@ type Props = {
   pageInfo: PageInfo;
 };
 
-function Hero({ pageInfo }: Props) {
+function Hero() {
   const [text, count] = useTypewriter({
-    words: [
-      `Hi I'm ${pageInfo?.name}`,
-      'Self-taught developer',
-      'Loves to <Code/>',
-    ],
+    words: [`Hi I'm Kewin`, 'Self-taught developer', 'Loves to <Code/>'],
     loop: true,
     delaySpeed: 2000,
   });
@@ -40,7 +36,7 @@ function Hero({ pageInfo }: Props) {
       </div>
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-400 tracking-widest ">
-          {pageInfo?.role}
+          React Developer
         </h2>
         <h1 className="text-3xl font-semibold py-0 my-0">
           <span className="">{text}</span>

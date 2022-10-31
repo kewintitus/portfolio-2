@@ -7,7 +7,7 @@ type Props = {
   pageInfo: PageInfo;
 };
 
-function About({ pageInfo }: Props) {
+function About() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -57,7 +57,10 @@ function About({ pageInfo }: Props) {
           background
         </h4>
         <p className="text-sm mt-4 md:leading-6 mb-7 text-gray-400">
-          {pageInfo?.backgroundInformation}
+          An enthusiastic self-taught frontend developer, who is passionate in
+          building responsive and scalable UI. Proficient in JavaScript, React
+          and Redux. Looking for a challenging environment where I can put my
+          technical skill to build UX rich web apps and websites.
         </p>
       </motion.div>
     </motion.div>

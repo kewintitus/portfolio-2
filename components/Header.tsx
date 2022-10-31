@@ -9,7 +9,13 @@ type Props = {
   socials: Social[];
 };
 
-function Header({ socials }: Props) {
+const socials = [
+  { url: 'https://www.linkedin.com/in/kewin-titus-ba570417a', id: 1 },
+  { url: 'https://github.com/kewintitus', id: 2 },
+  { url: 'https://twitter.com/KewinTitus', id: 3 },
+];
+
+function Header() {
   return (
     <header className=" flex justify-between sticky top-0 p-5 max-w-7xl mx-auto xl:items-center z-40">
       <motion.div
@@ -24,7 +30,7 @@ function Header({ socials }: Props) {
       >
         {socials.map((social) => (
           <SocialIcon
-            key={social._id}
+            key={social.id}
             url={social.url}
             fgColor="gray"
             bgColor="transparent"

@@ -3,11 +3,24 @@ import { motion } from 'framer-motion';
 import ExperienceCard from './ExperienceCard';
 import { Experience } from '../typings';
 
-type Props = {
-  experiences: Experience[];
-};
+// type Props = {
+//   experiences: Experience[];
+// };
+const experiences = [
+  {
+    _id: 1,
+    jobTitle: 'Engineer-I',
 
-function WorkExperience({ experiences }: Props) {
+    companyImage: 'companyImage',
+
+    company: 'Illumine-I',
+
+    dateStarted: 'April 2021',
+    dateEnded: 'August 2022',
+    isCurrentlyWorkingHere: false,
+  },
+];
+function WorkExperience() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -23,12 +36,9 @@ function WorkExperience({ experiences }: Props) {
     
        snap-x snap-mandatory "
       >
-        {experiences?.map((experience) => (
+        {experiences?.map((experience: any) => (
           <ExperienceCard key={experience._id} experience={experience} />
         ))}
-        {/* <ExperienceCard /> */}
-        {/* <ExperienceCard /> */}
-        {/* <ExperienceCard /> */}
       </div>
     </motion.div>
   );

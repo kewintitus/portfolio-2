@@ -89,17 +89,10 @@ function ExperienceCard({ experience }: Props) {
           </svg>
         </div>
         <p className="uppercase text-gray-300">
-          {new Date(experience?.dateStarted).toLocaleDateString('en-US', {
-            month: 'long',
-            year: 'numeric',
-          })}
-          -
+          {experience?.dateStarted}-
           {experience?.isCurrentlyWorkingHere
             ? 'Present'
-            : new Date(experience?.dateEnded).toLocaleDateString('en-US', {
-                month: 'long',
-                year: 'numeric',
-              })}
+            : experience?.dateEnded}
         </p>
         <ul className="list-disc space-y-2 text-sm text-gray-400 mt-4 overflow-scroll scrollbar-thin">
           <li> Worked on developing add-ins for CAD automation using C# </li>
@@ -117,3 +110,22 @@ function ExperienceCard({ experience }: Props) {
 }
 
 export default ExperienceCard;
+
+/** Legacy
+ * 
+ * Date
+ * <p className="uppercase text-gray-300">
+          {new Date(experience?.dateStarted).toLocaleDateString('en-US', {
+            month: 'long',
+            year: 'numeric',
+          })}
+          -
+          {experience?.isCurrentlyWorkingHere
+            ? 'Present'
+            : new Date(experience?.dateEnded).toLocaleDateString('en-US', {
+                month: 'long',
+                year: 'numeric',
+              })}
+        </p>
+ * 
+*/
